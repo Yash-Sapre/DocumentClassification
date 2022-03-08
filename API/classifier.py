@@ -7,7 +7,7 @@ import os
 from nltk.tokenize import RegexpTokenizer
 import pickle
 
-def make_model(text,categories,file_name):
+def make_model(file_name,text,categories):
     model = MultinomialNB()
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(text)
@@ -18,8 +18,8 @@ def make_model(text,categories,file_name):
     with open(file_name,'ab') as model_file:
         pickle.dump(obj_lst,model_file)
 
-def predict_text(text,file_name):
-    with open(file_name,'ab') as model_file:
+def predict_text(file_name,text):
+    with open(file_name,'rb') as model_file:
         obj_lst = pickle.load(model_file)
     
     model = obj_lst[0]
@@ -27,7 +27,7 @@ def predict_text(text,file_name):
     test_x = vectorizer.transform([text])
     # test_x = pd.DataFrame(X.toarray())
     prediction = model.predict(test_x)
-    return prediction
+    return prediction[0]
 
 
 
