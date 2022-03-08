@@ -15,7 +15,7 @@ def make_model(file_name,text,categories):
     train_y = pd.DataFrame(categories)
     model.fit(train_x,train_y.values.flatten())
     obj_lst = [model,vectorizer]
-    with open(file_name,'ab') as model_file:
+    with open(file_name,'wb') as model_file:
         pickle.dump(obj_lst,model_file)
 
 def predict_text(file_name,text):
