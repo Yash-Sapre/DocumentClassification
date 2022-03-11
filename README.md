@@ -1,6 +1,6 @@
 # DocumentClassification
 # Document Classifier
-Document Classifier is an API used to suggest the metafield of any Document based on input data given to the API. Flask which is python framework is used to build this API.
+Document Classifier is an API used to suggest the metafield of any Document based on input data given to the API. Flask which is python framework is used to build this API.The backend of this API uses NLP libraries such as numpy,nltk,sklearn and pandas.
 
 # Documentation
 To use this API the basic requirement is you need to install python on your system.
