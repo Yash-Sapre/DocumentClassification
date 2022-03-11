@@ -39,7 +39,6 @@ $ import nltk
 step 5 : Download and install nltk data
 ```bash
 $ import nltk
-```
-```bash
+
 $ nltk.download()
 ```
